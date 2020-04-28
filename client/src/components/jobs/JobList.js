@@ -15,14 +15,14 @@ const JobList = ({ job }) => {
       />
       <div>
         <h5 className='mt-4 mb-4'>{job.title}</h5>
-        <span>
+        <span className='text-gray'>
           <GiNetworkBars size={14} /> {job.skillLevel}{' '}
           <MdLocationOn size={14} /> {job.location} ${job.salary}
         </span>
       </div>
 
       <div className='card-footer mt-5'>
-        <span className='float-left text-dark mt-2'>Full time</span>
+        <span className='float-left mt-2'>Full time</span>
         <Link
           to={`/jobs/${job._id}`}
           className='btn btn-outline-danger btn-sm float-right'

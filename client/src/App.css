@@ -2,13 +2,25 @@
   --border-radius: 0px;
   --white-color: #fff;
   --pink-color: #da2461;
+  --gray-color: gray;
   --form-height: 54px;
   --section-padding: 70px 0;
+  --letter-spacing: 0.5px;
 }
 
 body {
-  /* font-family: 'Dosis', sans-serif !important; */
   font-family: 'Nunito', sans-serif !important;
+}
+
+p {
+  font-size: 17px;
+}
+
+h2,
+h5,
+p,
+span {
+  letter-spacing: var(--letter-spacing);
 }
 
 ul {
@@ -34,25 +46,6 @@ h2 {
   padding-bottom: 100px;
 }
 
-/* .testimonials .defaultHero {
-  background: linear-gradient(
-      45deg,
-      rgba(139, 145, 221, 0.9),
-      0%,
-      rgba(16, 25, 93, 0.9),
-      71%,
-      rgba(16, 25, 93, 0.9) 100%
-    ),
-    url('./img/hero.png') center/cover;
-} */
-
-/* background: linear-gradient(
-  45deg,
-  rgba(139, 145, 221, 1) 0%,
-  rgba(16, 25, 93, 1) 71%,
-  rgba(16, 25, 93, 1) 100%
-); */
-
 /* Banner */
 .banner h2 {
   margin-top: 150px;
@@ -70,9 +63,7 @@ h2 {
 }
 
 /* Featured jobs */
-
 .job-search form button {
-  /* float: left; */
   width: 100%;
   padding: 9px 0;
   font-size: 30px;
@@ -104,8 +95,9 @@ h2 {
   background-color: var(--pink-color) !important;
 }
 
-article span {
-  color: var(--pink-color);
+article span,
+.card-footer span {
+  color: var(--gray-color);
 }
 
 .card-footer {
@@ -117,13 +109,4 @@ article span {
   background-color: transparent !important;
   border: 1px solid var(--pink-color) !important;
   font-size: 12px !important;
-}
-
-/* Testimonials */
-.testimonials {
-  padding: var(--section-padding);
-}
-
-.testimonials p {
-  padding: 0 15px;
 }

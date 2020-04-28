@@ -22,11 +22,10 @@ exports.signup = asyncMiddleware(async (req, res, next) => {
   const user = await User.create({
     username,
     email,
-    password
+    password,
   });
 
-  // Create user.
-  // getSignedJwtToken is from userSchema.methods in d user model
+  // Create user
   const token = user.getSignedJwtToken();
 
   res.status(200).json({ success: true, token });
@@ -54,7 +53,6 @@ exports.signin = asyncMiddleware(async (req, res, next) => {
   }
 
   // Check if password matches
-  // password here is from d body
   const match = await user.matchPassword(password);
 
   if (!match) {

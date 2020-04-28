@@ -1,5 +1,5 @@
 import React, { useReducer, createContext } from 'react';
-import JobsReducer from './JobsReducer';
+import JobReducer from './JobReducer';
 import axios from 'axios';
 
 // Initial state
@@ -10,11 +10,11 @@ const initialState = {
 };
 
 // Create context
-export const JobsContext = createContext(initialState);
+export const JobContext = createContext(initialState);
 
 // Component provider
-export const JobsProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(JobsReducer, initialState);
+export const JobProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(JobReducer, initialState);
 
   // Actions
   async function getJobs() {
@@ -34,8 +34,6 @@ export const JobsProvider = ({ children }) => {
     try {
       const res = await axios.get(`/api/v1/jobs/${_id}`);
 
-      console.log(res);
-
       dispatch({
         type: 'GET_JOB',
         payload: res.data.data,
@@ -46,7 +44,7 @@ export const JobsProvider = ({ children }) => {
   }
 
   return (
-    <JobsContext.Provider
+    <JobContext.Provider
       value={{
         jobs: state.jobs,
         job: state.job,
@@ -56,6 +54,6 @@ export const JobsProvider = ({ children }) => {
       }}
     >
       {children}
-    </JobsContext.Provider>
+    </JobContext.Provider>
   );
 };

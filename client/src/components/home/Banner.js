@@ -6,7 +6,7 @@ const Banner = ({ title, subtitle, children }) => {
       <div className='container text-white text-capitalize text-center'>
         <div className='row'>
           <div className='col-sm-10 m-auto'>
-            <h2>{title}</h2>
+            <h2 className='text-white'>{title}</h2>
             <p>{subtitle}</p>
             {children}
           </div>

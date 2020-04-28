@@ -9,27 +9,22 @@ const ErrorResponse = require('../utils/errorResponse');
 /**
  * @description  Get all jobs
  * @route  GET api/v1/jobs
- * @route  GET api/v1/companies/:companyId/jobs => this gets jobs for specific companies *TODO*
+ * @route  GET api/v1/companies/:companyId/jobs => this gets jobs for specific     companies *TODO*
  * @returns {Object} message & data
  * @access public
- * // asyncMiddleware allows you avoid using try & catch while newErrorResponse allows you to pass the error(in a try catch block) to the     next obj
+ * // asyncMiddleware allows you avoid using try & catch while newErrorResponse allows you to pass the error(in a try catch block) to the next obj
  */
 exports.getJobs = asyncMiddleware(async (req, res, next) => {
   // console.log(req.query);
 
   let query;
 
-  // JSON.stringify converts the query in the URL to string
   queryStrUrl = JSON.stringify(req.query);
-
-  // queryStrUrl is d query in d URL from our backend while the first money sign is for d template literal & the second money sign is for the mongoose pattern symbol
   queryStrUrl = queryStrUrl.replace(
     /\b(gt|gte|lt|lte|in)\b/g,
-    match => `$${match}`
+    (match) => `$${match}`
   );
 
-  // pass query variable into job model.
-  // JSON.parse converts the query in the URL back to JSON format
   query = Job.find(JSON.parse(queryStrUrl));
 
   // query here is the same as Job.find()
@@ -75,7 +70,7 @@ exports.createJob = asyncMiddleware(async (req, res, next) => {
 exports.updateJob = asyncMiddleware(async (req, re, next) => {
   const job = await Job.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
-    runValidators: true
+    runValidators: true,
   });
 
   if (!job) {
