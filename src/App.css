@@ -1,0 +1,94 @@
+:root {
+  --border-radius: 0px;
+  --white-color: #fff;
+  --pink-color: #da2461;
+  --form-height: 54px;
+}
+
+body {
+  /* font-family: 'Dosis', sans-serif !important; */
+  font-family: 'Nunito', sans-serif !important;
+}
+
+ul {
+  list-style: none;
+}
+
+h2 {
+  font-size: 40px !important;
+  color: #28395a;
+}
+
+/* Hero */
+.defaultHero {
+  background: linear-gradient(
+      45deg,
+      rgba(139, 145, 221, 0.9),
+      0%,
+      rgba(16, 25, 93, 0.9),
+      71%,
+      rgba(16, 25, 93, 0.9) 100%
+    ),
+    url('./img/hero.png') center/cover;
+  padding-bottom: 100px;
+}
+
+/* background: linear-gradient(
+  45deg,
+  rgba(139, 145, 221, 1) 0%,
+  rgba(16, 25, 93, 1) 71%,
+  rgba(16, 25, 93, 1) 100%
+); */
+
+/* Banner */
+.banner h2 {
+  margin-top: 150px;
+  font-size: 40px;
+  letter-spacing: 0.5px;
+}
+
+.banner p {
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.form-control {
+  height: 54px !important;
+}
+
+.job-search form button {
+  /* float: left; */
+  width: 100%;
+  padding: 9px 0;
+  font-size: 30px;
+  background-color: #8b91dd !important;
+  height: 54px;
+  border-radius: 8px;
+  border: none !important;
+}
+
+.job-search form .row > div {
+  padding: 0 5px;
+}
+
+.job-search span {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  color: var(--pink-color);
+}
+
+.job-search .search {
+  position: absolute;
+  top: 4px;
+  right: 22px;
+  color: var(--white-color);
+}
+
+.job-search button:hover {
+  background-color: var(--pink-color) !important;
+}
+
+article h6 {
+  margin-top: -20px;
+}
