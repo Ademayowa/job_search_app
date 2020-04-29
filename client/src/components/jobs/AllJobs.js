@@ -7,7 +7,6 @@ const AllJobs = () => {
   const { jobs, loading, getJobs } = useContext(JobContext);
 
   // console.log(jobs);
-
   useEffect(() => {
     getJobs();
     // eslint-disable-next-line
@@ -16,7 +15,7 @@ const AllJobs = () => {
   if (loading) return <Spinner />;
 
   return (
-    <div className='container mt-5 mb-5 text-center'>
+    <div className='container mb-5 text-center'>
       <h2 className='mt-5 mb-5'>Featured Jobs</h2>
       <div style={grid}>
         {jobs.map((job) => (

@@ -8,20 +8,23 @@ import Home from './components/home/Home';
 import Navbar from './components/layout/Navbar';
 import { JobProvider } from './context/jobs/JobState';
 import SingleJob from './components/job/SingleJob';
+import { CompanyProvider } from './context/company/CompanyState';
 
 const App = () => {
   return (
     <Fragment>
       <JobProvider>
-        <Router>
-          <Navbar />
-          <div className='App'>
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/jobs/:jobId' component={SingleJob} />
-            </Switch>
-          </div>
-        </Router>
+        <CompanyProvider>
+          <Router>
+            <Navbar />
+            <div className='App'>
+              <Switch>
+                <Route exact path='/' component={Home} />
+                <Route exact path='/jobs/:jobId' component={SingleJob} />
+              </Switch>
+            </div>
+          </Router>
+        </CompanyProvider>
       </JobProvider>
     </Fragment>
   );

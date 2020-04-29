@@ -2,7 +2,9 @@
   --border-radius: 0px;
   --white-color: #fff;
   --pink-color: #da2461;
-  --gray-color: gray;
+  --primary-color: #001f38;
+  --gray-color: #888888;
+  --job-icons: #8089c7;
   --form-height: 54px;
   --section-padding: 70px 0;
   --letter-spacing: 0.5px;
@@ -17,6 +19,7 @@ p {
 }
 
 h2,
+h4,
 h5,
 p,
 span {
@@ -35,12 +38,11 @@ h2 {
 /* Hero */
 .defaultHero {
   background: linear-gradient(
-      45deg,
-      rgba(139, 145, 221, 0.9),
-      0%,
-      rgba(16, 25, 93, 0.9),
+      90deg,
+      rgba(65, 64, 124, 0.93) 0%,
+      rgba(16, 25, 93, 0.95),
       71%,
-      rgba(16, 25, 93, 0.9) 100%
+      rgba(16, 25, 93, 0.97) 100%
     ),
     url('./img/hero.png') center/cover;
   padding-bottom: 100px;
@@ -67,7 +69,7 @@ h2 {
   width: 100%;
   padding: 9px 0;
   font-size: 30px;
-  background-color: #8b91dd !important;
+  background-color: var(--job-icons) !important;
   height: 54px;
   border-radius: 8px;
   border: none !important;
@@ -97,7 +99,21 @@ h2 {
 
 article span,
 .card-footer span {
-  color: var(--gray-color);
+  color: var(--primary-color);
+}
+
+/* Card */
+.card {
+  transition: all 0.2s;
+  z-index: 10;
+}
+.card:hover {
+  transform: scale(1.06);
+  z-index: 20;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.24);
+}
+.card h5:hover {
+  color: var(--pink-color) !important;
 }
 
 .card-footer {
@@ -109,4 +125,25 @@ article span,
   background-color: transparent !important;
   border: 1px solid var(--pink-color) !important;
   font-size: 12px !important;
+  border-radius: 25px;
+}
+
+/* Single job page*/
+.single-job hr {
+  border-bottom: 1px solid #e8ecec;
+}
+
+.single-job p {
+  color: var(--gray-color);
+}
+
+.single-job .icons {
+  line-height: 2;
+  display: table;
+}
+
+.single-job a {
+  color: var(--job-icons) !important;
+  border: 1px solid var(--job-icons) !important;
+  border-radius: 25px;
 }
