@@ -1,6 +1,10 @@
 [
   {
     "_id": "5d725a4a7b292f5f8ceff789",
+    "name": "Bincom ICT Solutions",
+    "website": "https://bincom.net",
+    "phone": "(111) 111-1111",
+    "email": "bincom@gmail.com",
     "title": "Front End Developer",
     "jobSummary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptatibus exercitationem delectus laborum, asperiores maxime, commodi, porro aperiam fugiat aliquam totam. Distinctio sunt pariatur dignissimos iusto quod, voluptas eius esse exercitationem commodi.",
     "salary": "8000 - 4000",
@@ -14,6 +18,10 @@
   },
   {
     "_id": "5d725c84c4ded7bcb480eaa0",
+    "name": "Softcom",
+    "website": "https://softcom.com",
+    "phone": "(222) 222-2222",
+    "email": "softcom@gmail.com",
     "title": "Full Stack Web Developer",
     "jobSummary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptatibus exercitationem delectus laborum, asperiores maxime, commodi, porro aperiam fugiat aliquam totam. Distinctio sunt pariatur dignissimos iusto quod, voluptas eius esse exercitationem commodi.",
     "salary": "10000 - 20000",
@@ -34,6 +42,10 @@
   },
   {
     "_id": "5d725cb9c4ded7bcb480eaa1",
+    "name": "Andela",
+    "website": "https://andela.com",
+    "phone": "(333) 333-3333",
+    "email": "andela@gmail.com",
     "title": "Mobile App Developer",
     "jobSummary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptatibus exercitationem delectus laborum, asperiores maxime, commodi, porro aperiam fugiat aliquam totam. Distinctio sunt pariatur dignissimos iusto quod, voluptas eius esse exercitationem commodi.",
     "salary": "12000 - 15000",
@@ -47,6 +59,10 @@
   },
   {
     "_id": "5d725cd2c4ded7bcb480eaa2",
+    "name": "Interswitch",
+    "website": "https://interswitch.com",
+    "phone": "(444) 444-4444",
+    "email": "interswitch@gmail.com",
     "title": "PHP Developer",
     "jobSummary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptatibus exercitationem delectus laborum, asperiores maxime, commodi, porro aperiam fugiat aliquam totam. Distinctio sunt pariatur dignissimos iusto quod, voluptas eius esse exercitationem commodi.",
     "salary": "10000 - 40000",
@@ -69,6 +85,10 @@
   },
   {
     "_id": "5d725ce8c4ded7bcb480eaa3",
+    "name": "Paystack",
+    "website": "https://paystack.com",
+    "phone": "(555) 555-5555",
+    "email": "paystack@gmail.com",
     "title": "UI/UX Designer",
     "jobSummary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptatibus exercitationem delectus laborum, asperiores maxime, commodi, porro aperiam fugiat aliquam totam. Distinctio sunt pariatur dignissimos iusto quod, voluptas eius esse exercitationem commodi.",
     "salary": "12000 - 18000",
@@ -82,6 +102,10 @@
   },
   {
     "_id": "5d725cfec4ded7bcb480eaa4",
+    "name": "Flutterwave",
+    "website": "https://flutterwave.com",
+    "phone": "(666) 666-6666",
+    "email": "flutterwave@gmail.com",
     "title": "Data Science Analyst",
     "jobSummary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptatibus exercitationem delectus laborum, asperiores maxime, commodi, porro aperiam fugiat aliquam totam. Distinctio sunt pariatur dignissimos iusto quod, voluptas eius esse exercitationem commodi.",
     "salary": "9000 - 15000",
@@ -95,6 +119,10 @@
   },
   {
     "_id": "5d725cfec4ded7bcb480eaa5",
+    "name": "Google",
+    "website": "https://google.com",
+    "phone": "(777) 777-7777",
+    "email": "google@gmail.com",
     "title": "Front End Web Developer",
     "jobSummary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptatibus exercitationem delectus laborum, asperiores maxime, commodi, porro aperiam fugiat aliquam totam. Distinctio sunt pariatur dignissimos iusto quod, voluptas eius esse exercitationem commodi.",
     "salary": "8000 - 15000",
@@ -108,6 +136,10 @@
   },
   {
     "_id": "5d725cfec4ded7bcb480eaa7",
+    "name": "Microsoft",
+    "website": "https://microsoft.com",
+    "phone": "(888) 888-8888",
+    "email": "microsoft@gmail.com",
     "title": "Mobile Developer",
     "jobSummary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptatibus exercitationem delectus laborum, asperiores maxime, commodi, porro aperiam fugiat aliquam totam. Distinctio sunt pariatur dignissimos iusto quod, voluptas eius esse exercitationem commodi.",
     "salary": "6000 - 130000",

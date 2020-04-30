@@ -20,7 +20,7 @@ exports.getProfiles = asyncMiddleware(async (req, res, next) => {
   res.status(200).json({
     success: true,
     count: profiles.length,
-    data: profiles
+    data: profiles,
   });
 });
 
@@ -32,7 +32,7 @@ exports.getProfiles = asyncMiddleware(async (req, res, next) => {
  */
 exports.getUserById = asyncMiddleware(async (req, res, next) => {
   const user = await Profile.findOne({
-    user: req.params.userId
+    user: req.params.userId,
   }).populate('user', ['username', 'email']);
 
   if (!user) {
@@ -86,7 +86,7 @@ exports.createProfile = asyncMiddleware(async (req, res, next) => {
 exports.updateProfile = asyncMiddleware(async (req, res, next) => {
   const profile = await Profile.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
-    runValidators: true
+    runValidators: true,
   });
 
   if (!profile) {
@@ -125,7 +125,7 @@ exports.deleteProfile = asyncMiddleware(async (req, res, next) => {
  */
 exports.getCurrentProfile = asyncMiddleware(async (req, res, next) => {
   const profile = await Profile.findOne({
-    user: req.user.id
+    user: req.user.id,
   }).populate('user', ['username', 'email']);
 
   if (!profile) {
@@ -194,7 +194,7 @@ exports.profilePhotoUpload = asyncMiddleware(async (req, res, next) => {
   // Create cutome file name
   file.name = `photo_${profile._id}${path.parse(file.name).ext}`;
 
-  file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, async err => {
+  file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, async (err) => {
     if (err) {
       console.error(err);
       return next(new ErrorResponse(`Problem with file upload`, 500));
@@ -204,7 +204,7 @@ exports.profilePhotoUpload = asyncMiddleware(async (req, res, next) => {
 
     res.status(200).json({
       success: true,
-      data: file.name
+      data: file.name,
     });
   });
 

@@ -1,12 +1,11 @@
 :root {
   --border-radius: 0px;
   --white-color: #fff;
-  --pink-color: #da2461;
-  --primary-color: #001f38;
+  --black-color: #000;
+  --orange-color: #ff6633;
   --gray-color: #888888;
-  --job-icons: #8089c7;
+  --hover-color: #003366;
   --form-height: 54px;
-  --section-padding: 70px 0;
   --letter-spacing: 0.5px;
 }
 
@@ -32,17 +31,14 @@ ul {
 
 h2 {
   font-size: 40px !important;
-  color: #28395a;
 }
 
 /* Hero */
 .defaultHero {
   background: linear-gradient(
-      90deg,
-      rgba(65, 64, 124, 0.93) 0%,
-      rgba(16, 25, 93, 0.95),
-      71%,
-      rgba(16, 25, 93, 0.97) 100%
+      to right bottom,
+      rgba(15, 52, 91, 0.89),
+      rgba(15, 52, 81, 0.98)
     ),
     url('./img/hero.png') center/cover;
   padding-bottom: 100px;
@@ -65,11 +61,15 @@ h2 {
 }
 
 /* Featured jobs */
+.featured-jobs h5 {
+  color: var(--orange-color);
+}
+
 .job-search form button {
   width: 100%;
   padding: 9px 0;
   font-size: 30px;
-  background-color: var(--job-icons) !important;
+  background-color: var(--orange-color) !important;
   height: 54px;
   border-radius: 8px;
   border: none !important;
@@ -83,7 +83,7 @@ h2 {
   position: absolute;
   top: 15px;
   right: 30px;
-  color: var(--pink-color);
+  color: var(--orange-color);
 }
 
 .job-search .search {
@@ -94,12 +94,7 @@ h2 {
 }
 
 .job-search button:hover {
-  background-color: var(--pink-color) !important;
-}
-
-article span,
-.card-footer span {
-  color: var(--primary-color);
+  background-color: var(--black-color) !important;
 }
 
 /* Card */
@@ -113,7 +108,7 @@ article span,
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.24);
 }
 .card h5:hover {
-  color: var(--pink-color) !important;
+  color: var(--hover-color) !important;
 }
 
 .card-footer {
@@ -121,29 +116,47 @@ article span,
 }
 
 .card-footer .btn-outline-danger {
-  color: var(--pink-color) !important;
+  color: var(--black-color) !important;
   background-color: transparent !important;
-  border: 1px solid var(--pink-color) !important;
+  border: 1px solid var(--black-color) !important;
   font-size: 12px !important;
   border-radius: 25px;
 }
 
 /* Single job page*/
-.single-job hr {
+.job-info h3 {
+  color: var(--orange-color);
+}
+
+.job-info hr {
   border-bottom: 1px solid #e8ecec;
 }
 
-.single-job p {
+.job-info p {
   color: var(--gray-color);
 }
 
-.single-job .icons {
+.job-info .icons {
   line-height: 2;
   display: table;
 }
 
-.single-job a {
-  color: var(--job-icons) !important;
-  border: 1px solid var(--job-icons) !important;
+.job-info .btn-outline-danger {
+  color: var(--white-color) !important;
+  background: var(--orange-color) !important;
   border-radius: 25px;
+  border: 0 !important;
+}
+
+.job-info .btn-outline-danger:hover {
+  background: var(--hover-color) !important;
+  border: 0 !important;
+  color: var(--white-color) !important;
+}
+
+.company-details .btn-outline-danger {
+  width: 250px !important;
+  font-size: 13px !important;
+  border-radius: 40px !important;
+  border: 0 !important;
 }

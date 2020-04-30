@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Hero from './Hero';
 import Banner from './Banner';
 import SearchForm from './SearchForm';
-import AllJobs from '../jobs/AllJobs';
+import FeaturedJobs from '../jobs/FeaturedJobs';
 
 const Home = () => {
   return (
@@ -15,7 +15,7 @@ const Home = () => {
           <SearchForm />
         </Banner>
       </Hero>
-      <AllJobs />
+      <FeaturedJobs />
     </Fragment>
   );
 };

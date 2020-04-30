@@ -19,7 +19,7 @@ exports.getCompanies = asyncMiddleware(async (req, res, next) => {
   res.status(200).json({
     success: true,
     count: companies.length,
-    data: companies
+    data: companies,
   });
 });
 
@@ -65,7 +65,7 @@ exports.createCompany = asyncMiddleware(async (req, res, next) => {
 exports.updateCompany = asyncMiddleware(async (req, res, next) => {
   const company = await Company.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
-    runValidators: true
+    runValidators: true,
   });
 
   if (!company) {

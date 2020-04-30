@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 import { FaRegKeyboard } from 'react-icons/fa';
 import { MdLocationOn, MdSearch } from 'react-icons/md';
+import { JobContext } from '../../context/jobs/JobState';
 
 const SearchForm = () => {
+  const { filtered, filteredJobs } = useContext(JobContext);
+
+  const text = useRef('');
+
+  // const { filtered, filteredJobs } = jobContext;
+
+  useEffect(() => {
+    if (filtered === null) {
+      text.current.value = '';
+    }
+  });
+
+  const onChange = (e) => {
+    filteredJobs(e.target.value);
+  };
+
   return (
     <div className='container job-search'>
       <form>
@@ -10,9 +27,11 @@ const SearchForm = () => {
           <div className='col-lg-7'>
             <div className='job-field'>
               <input
+                ref={text}
                 className='form-control form-control-lg mb-3'
                 type='text'
-                placeholder='Job title, keywords or company name'
+                placeholder='Job title, or location'
+                onChange={onChange}
               />
               <span>
                 {' '}

@@ -6,6 +6,7 @@ import axios from 'axios';
 const initialState = {
   jobs: [],
   job: [],
+  filtered: null,
   loading: true,
 };
 
@@ -43,14 +44,23 @@ export const JobProvider = ({ children }) => {
     }
   }
 
+  const filteredJobs = (text) => {
+    dispatch({
+      type: 'FILTERED_JOBS',
+      payload: text,
+    });
+  };
+
   return (
     <JobContext.Provider
       value={{
         jobs: state.jobs,
         job: state.job,
         loading: state.loading,
+        filtered: state.filtered,
         getJobs,
         getJob,
+        filteredJobs,
       }}
     >
       {children}

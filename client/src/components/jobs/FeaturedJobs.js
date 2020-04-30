@@ -1,26 +1,24 @@
 import React, { useContext, useEffect } from 'react';
 import { JobContext } from '../../context/jobs/JobState';
-import JobList from './JobList';
+import FeaturedJobList from './FeaturedJobList';
 import Spinner from '../layout/Spinner';
 
 const AllJobs = () => {
-  const { jobs, loading, getJobs } = useContext(JobContext);
+  const { jobs, loading, getJobs, filtered } = useContext(JobContext);
 
-  // console.log(jobs);
   useEffect(() => {
     getJobs();
     // eslint-disable-next-line
   }, []);
 
   if (loading) return <Spinner />;
-
   return (
-    <div className='container mb-5 text-center'>
+    <div className='container featured-jobs mb-5 text-center'>
       <h2 className='mt-5 mb-5'>Featured Jobs</h2>
       <div style={grid}>
-        {jobs.map((job) => (
-          <JobList key={job._id} job={job} />
-        ))}
+        {filtered !== null
+          ? filtered.map((job) => <FeaturedJobList key={job._id} job={job} />)
+          : jobs.map((job) => <FeaturedJobList key={job._id} job={job} />)}
       </div>
     </div>
   );
@@ -28,7 +26,7 @@ const AllJobs = () => {
 
 const grid = {
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
   gridGap: '2rem',
 };
 

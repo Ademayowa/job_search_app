@@ -11,7 +11,7 @@ const {
   deleteProfile,
   getCurrentProfile,
   getHandle,
-  profilePhotoUpload
+  profilePhotoUpload,
 } = require('../controllers/profiles');
 
 router.get('/all', getProfiles);

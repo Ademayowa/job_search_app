@@ -16,7 +16,7 @@ const JobList = ({ job }) => {
       />
       <div>
         <Link to={`/jobs/${job._id}`}>
-          <h5 className='mt-4 mb-4 text-dark'>{job.title}</h5>
+          <h5 className='mt-4 mb-4'>{job.title}</h5>
         </Link>
         <span>
           <GiNetworkBars size={14} /> {job.skillLevel}{' '}
