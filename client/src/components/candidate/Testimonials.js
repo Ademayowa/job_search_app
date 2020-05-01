@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Slider from 'react-slick';
-import Hero from '../home/Hero';
+import Img from '../../img/candidate1.png';
+import Img1 from '../../img/candidate2.jpeg';
 
 const Testimonials = () => {
   const settings = {
@@ -17,36 +18,51 @@ const Testimonials = () => {
     {
       id: '1',
       candidate: 'Mrs. Sarah Jane',
+      img: Img,
       testimony:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptate debitis, obcaecati cumque nostrum eveniet perspiciatis est distinctio inventore non, autem totam sapiente quod aliquid sequi neque repellat! Ab, hic.Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptate debitis, obcaecati cumque nostrum eveniet perspiciatis est distinctio inventore non, autem totam sapiente quod aliquid',
     },
     {
       id: '2',
       candidate: 'Mr. John Doe',
-      testimony:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptate debitis, obcaecati cumque nostrum eveniet perspiciatis est distinctio inventore non, autem totam sapiente quod aliquid sequi neque repellat! Ab, hic.Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptate debitis, obcaecati cumque nostrum eveniet perspiciatis est distinctio inventore non, autem totam sapiente quod aliquid',
-    },
-    {
-      id: '3',
-      candidate: 'Mr. Sam Smith',
+      img: Img1,
       testimony:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptate debitis, obcaecati cumque nostrum eveniet perspiciatis est distinctio inventore non, autem totam sapiente quod aliquid sequi neque repellat! Ab, hic.Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptate debitis, obcaecati cumque nostrum eveniet perspiciatis est distinctio inventore non, autem totam sapiente quod aliquid',
     },
   ]);
 
   return (
-    <Hero>
-      <div className='container text-white col-md-10 m-auto'>
-        <Slider {...settings}>
-          {testimonies.map((item) => (
-            <div key={item.id}>
-              <p className='mt-5'>{item.testimony}</p>
-              <h5 className='mt-3 mb-4 text-center'>{item.candidate}</h5>
-            </div>
-          ))}
-        </Slider>
+    <section className='testimonials mt-5'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-sm-12'>
+            <h2 className='mb-5 text-center'>Testimonials</h2>
+          </div>
+        </div>
+
+        <div className='card px-5 z-depth-4'>
+          <Slider {...settings}>
+            {testimonies.map((item) => (
+              <div key={item.id}>
+                <div className='row py-5'>
+                  <div className='col-lg-4 px-5'>
+                    <img
+                      src={item.img}
+                      alt={item.candidate}
+                      className='img-fluid rounded-circle mb-3'
+                    />
+                    <p className='text-center'>{item.candidate}</p>
+                  </div>
+                  <div className='col-lg-8 mt-5 pl-lg-5'>
+                    <p>{item.testimony}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
       </div>
-    </Hero>
+    </section>
   );
 };
 

@@ -5,7 +5,7 @@ import Img from '../../img/company1.png';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const JobList = ({ job }) => {
+const FeaturedJobList = ({ job }) => {
   return (
     <article className='card card-body py-4'>
       <img
@@ -37,8 +37,8 @@ const JobList = ({ job }) => {
   );
 };
 
-JobList.propTypes = {
+FeaturedJobList.propTypes = {
   job: PropTypes.object.isRequired,
 };
 
-export default JobList;
+export default FeaturedJobList;

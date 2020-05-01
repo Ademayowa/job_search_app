@@ -8,8 +8,6 @@ const SearchForm = () => {
 
   const text = useRef('');
 
-  // const { filtered, filteredJobs } = jobContext;
-
   useEffect(() => {
     if (filtered === null) {
       text.current.value = '';
@@ -25,39 +23,32 @@ const SearchForm = () => {
       <form>
         <div className='row'>
           <div className='col-lg-7'>
-            <div className='job-field'>
-              <input
-                ref={text}
-                className='form-control form-control-lg mb-3'
-                type='text'
-                placeholder='Job title, or location'
-                onChange={onChange}
-              />
-              <span>
-                {' '}
-                <FaRegKeyboard size={28} />
-              </span>
-            </div>
+            <input
+              className='form-control form-control-lg mb-3'
+              type='text'
+              placeholder='Search job title'
+              ref={text}
+              onChange={onChange}
+            />
+            <span>
+              <FaRegKeyboard size={28} />
+            </span>
           </div>
           <div className='col-lg-4'>
-            <div className='job-field'>
-              <select
-                data-placeholder='City, province or region'
-                className='form-control form-control-lg mb-3'
-              >
-                <option>Instambul</option>
-                <option>New York</option>
-                <option>London</option>
-                <option>Russia</option>
-              </select>
-              <span>
-                {' '}
-                <MdLocationOn size={28} />
-              </span>
-            </div>
+            <input
+              className='form-control form-control-lg mb-3'
+              type='text'
+              placeholder='Search location'
+              ref={text}
+              onChange={onChange}
+            />
+            <span>
+              {' '}
+              <MdLocationOn size={28} />
+            </span>
           </div>
           <div className='col-lg-1'>
-            <button type='submit'>
+            <button type='search'>
               <span className='search'>
                 {' '}
                 <MdSearch size={28} />

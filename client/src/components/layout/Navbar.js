@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../../img/logo.png';
+// import Logo from '../../img/logo.png';
 
 const Navbar = () => {
   return (
-    <nav className='navbar navbar-expand-lg navbar-info pl-4'>
+    <nav className='navbar navbar-expand-lg navbar-info m-auto p-4 z-depth-3'>
       <div className='container'>
-        <Link className='navbar-brand' to='/'>
-          <img src={Logo} alt='logo' className='img-fluid' />
+        <Link className='navbar-brand text-white' to='/'>
+          Job Portal
         </Link>
         <button
           className='navbar-toggler'
@@ -29,17 +29,17 @@ const Navbar = () => {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link className='nav-link' to='/about'>
+              <Link className='nav-link' to='#'>
                 About Us
               </Link>
             </li>
             <li className='nav-item'>
-              <Link className='nav-link' to='/register'>
+              <Link className='nav-link' to='#'>
                 Register
               </Link>
             </li>
             <li className='nav-item'>
-              <Link className='nav-link' to='/login'>
+              <Link className='nav-link' to='#'>
                 Login
               </Link>
             </li>

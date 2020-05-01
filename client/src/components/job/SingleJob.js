@@ -82,7 +82,7 @@ const SingleJob = ({ match }) => {
 
             <Link
               to='#'
-              className='btn btn-outline-danger btn-block btn-lg text-capitalize'
+              className='btn btn-outline-danger btn-lg text-capitalize'
             >
               Apply
             </Link>

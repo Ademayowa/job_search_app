@@ -5,8 +5,10 @@
   --orange-color: #ff6633;
   --gray-color: #888888;
   --hover-color: #003366;
+  --blue-color: #f1f6fc;
   --form-height: 54px;
   --letter-spacing: 0.5px;
+  --section-padding: 70px 15px;
 }
 
 body {
@@ -33,12 +35,26 @@ h2 {
   font-size: 40px !important;
 }
 
+/* Navbar section */
+nav {
+  background-color: var(--hover-color);
+  border-radius: 3rem;
+  color: var(--white-color) !important;
+  width: 90%;
+  position: relative;
+  top: 30px;
+}
+
+a.nav-link {
+  color: var(--white-color) !important;
+}
+
 /* Hero */
 .defaultHero {
   background: linear-gradient(
       to right bottom,
-      rgba(15, 52, 91, 0.89),
-      rgba(15, 52, 81, 0.98)
+      rgb(94, 119, 141),
+      rgba(15, 52, 81, 0.95)
     ),
     url('./img/hero.png') center/cover;
   padding-bottom: 100px;
@@ -159,4 +175,31 @@ h2 {
   font-size: 13px !important;
   border-radius: 40px !important;
   border: 0 !important;
+}
+
+/* Testimonials */
+.testimonials .card:hover {
+  transform: none;
+}
+
+.testimonials {
+  padding: 70px 15px 120px 15px;
+  background-color: var(--blue-color);
+}
+
+/* How it works */
+.how-it-works {
+  padding: var(--section-padding);
+}
+
+/* Footer */
+.footer-banner {
+  margin-bottom: -80px !important;
+  padding: 70px 15px 0 15px;
+  line-height: 2;
+  letter-spacing: var(--letter-spacing);
+}
+
+.footer-banner ul {
+  margin-left: -40px !important;
 }

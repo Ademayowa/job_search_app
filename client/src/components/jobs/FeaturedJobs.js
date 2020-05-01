@@ -3,7 +3,7 @@ import { JobContext } from '../../context/jobs/JobState';
 import FeaturedJobList from './FeaturedJobList';
 import Spinner from '../layout/Spinner';
 
-const AllJobs = () => {
+const FeaturedJobs = () => {
   const { jobs, loading, getJobs, filtered } = useContext(JobContext);
 
   useEffect(() => {
@@ -30,4 +30,4 @@ const grid = {
   gridGap: '2rem',
 };
 
-export default AllJobs;
+export default FeaturedJobs;

@@ -5,10 +5,10 @@ import './App.css';
 import 'mdbootstrap/css/bootstrap.min.css';
 import 'mdbootstrap/css/mdb.min.css';
 import Home from './components/home/Home';
-import Navbar from './components/layout/Navbar';
 import { JobProvider } from './context/jobs/JobState';
 import SingleJob from './components/job/SingleJob';
 import { CompanyProvider } from './context/company/CompanyState';
+import Footer from './components/layout/Footer';
 
 const App = () => {
   return (
@@ -16,7 +16,6 @@ const App = () => {
       <JobProvider>
         <CompanyProvider>
           <Router>
-            <Navbar />
             <div className='App'>
               <Switch>
                 <Route exact path='/' component={Home} />
@@ -24,6 +23,7 @@ const App = () => {
               </Switch>
             </div>
           </Router>
+          <Footer />
         </CompanyProvider>
       </JobProvider>
     </Fragment>
