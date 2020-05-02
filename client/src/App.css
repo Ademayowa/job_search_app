@@ -8,7 +8,8 @@
   --blue-color: #f1f6fc;
   --form-height: 54px;
   --letter-spacing: 0.5px;
-  --section-padding: 70px 15px;
+  --letter-spacing-banner: 1.5px;
+  --section-padding: 70px 15px 0px 15px;
 }
 
 body {
@@ -35,6 +36,18 @@ h2 {
   font-size: 40px !important;
 }
 
+/* Section padding */
+.featured-jobs,
+.how-it-works {
+  padding-bottom: 70px;
+}
+
+/* Section h2 padding */
+.featured-jobs h2,
+.how-it-works h2 {
+  padding: var(--section-padding);
+}
+
 /* Navbar section */
 nav {
   background-color: var(--hover-color);
@@ -52,7 +65,7 @@ a.nav-link {
 /* Hero */
 .defaultHero {
   background: linear-gradient(
-      to right bottom,
+      to left bottom,
       rgb(94, 119, 141),
       rgba(15, 52, 81, 0.95)
     ),
@@ -64,12 +77,12 @@ a.nav-link {
 .banner h2 {
   margin-top: 150px;
   font-size: 40px;
-  letter-spacing: 0.5px;
+  letter-spacing: var(--letter-spacing-banner);
 }
 
 .banner p {
-  font-size: 20px;
-  letter-spacing: 0.5px;
+  font-size: 21px;
+  letter-spacing: var(--letter-spacing-banner);
 }
 
 .form-control {
@@ -98,7 +111,7 @@ a.nav-link {
 .job-search span {
   position: absolute;
   top: 15px;
-  right: 30px;
+  right: 22px;
   color: var(--orange-color);
 }
 
@@ -133,10 +146,13 @@ a.nav-link {
 
 .card-footer .btn-outline-danger {
   color: var(--black-color) !important;
-  background-color: transparent !important;
   border: 1px solid var(--black-color) !important;
   font-size: 12px !important;
   border-radius: 25px;
+}
+
+.card-footer .btn-outline-danger:hover {
+  border: 1px solid var(--orange-color) !important;
 }
 
 /* Single job page*/
@@ -187,19 +203,33 @@ a.nav-link {
   background-color: var(--blue-color);
 }
 
-/* How it works */
-.how-it-works {
-  padding: var(--section-padding);
-}
-
 /* Footer */
 .footer-banner {
   margin-bottom: -80px !important;
-  padding: 70px 15px 0 15px;
+  padding: var(--section-padding);
   line-height: 2;
   letter-spacing: var(--letter-spacing);
 }
 
 .footer-banner ul {
   margin-left: -40px !important;
+}
+
+.center-line {
+  background-color: var(--orange-color);
+  height: 1px;
+  margin: 0px auto 25px;
+  width: 150px;
+}
+
+/* slider */
+.slick-dots {
+  bottom: -55px;
+}
+.slick-dots li.slick-active button:before {
+  opacity: 0.75;
+  color: var(--orange-color) !important;
+}
+.slick-dots li button:before {
+  font-size: 12px;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MdSearch, MdPeople, MdNotifications } from 'react-icons/md';
+import Title from './Title';
 
 const HowItworks = () => {
   const [works] = useState([
@@ -28,8 +29,8 @@ const HowItworks = () => {
 
   return (
     <div className='container text-center how-it-works'>
-      <h2 className='text-capitalize mb-5'>how it works</h2>
-      <main style={grid} className='px-5'>
+      <Title title='how it works' />
+      <main style={grid}>
         {works.map((work) => (
           <article key={work.id}>
             <p>{work.icon}</p>

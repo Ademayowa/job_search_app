@@ -4,7 +4,7 @@ import Hero from '../../components/home/Hero';
 const Footer = () => {
   return (
     <Hero>
-      <div className='footer-banner text-dark'>
+      <div className='footer-banner'>
         <div className='container text-white mb-4'>
           <div className='row'>
             <div className='col-md-6 col-sm-8'>

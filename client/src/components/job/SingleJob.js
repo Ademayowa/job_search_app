@@ -12,6 +12,8 @@ import {
 } from 'react-icons/fa';
 import { IoMdGlobe } from 'react-icons/io';
 
+import { numberWithCommas } from '../../utils/format';
+
 const SingleJob = ({ match }) => {
   const { job, loading, getJob } = useContext(JobContext);
 
@@ -22,7 +24,7 @@ const SingleJob = ({ match }) => {
 
   if (loading) return <Spinner />;
   return (
-    <div className='container job-info mt-5 mb-5'>
+    <div className='container job-info mb-5'>
       <div className='row'>
         <div className='col-lg-8 margin p-4'>
           <Link to='/' className='btn btn-outline-danger text-capitalize'>
@@ -33,8 +35,7 @@ const SingleJob = ({ match }) => {
             <span className='icons'>
               <MdLocationOn size={21} color='#ff6633' /> {job.location}{' '}
               &nbsp;&nbsp;
-              <FaRegMoneyBillAlt size={21} color='#ff6633' /> Salary : $
-              {job.salary}
+              <FaRegMoneyBillAlt /> Salary : ${numberWithCommas(job.salary)}
               &nbsp;&nbsp;
               <FaCalendarAlt size={18} color='#ff6633' /> Expires In : 10days
             </span>

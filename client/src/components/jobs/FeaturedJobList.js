@@ -24,7 +24,7 @@ const FeaturedJobList = ({ job }) => {
         </span>
       </div>
 
-      <div className='card-footer mt-5'>
+      <div className='card-footer mt-5 pt-4'>
         <span className='float-left mt-2'>{job.type}</span>
         <Link
           to={`/jobs/${job._id}`}

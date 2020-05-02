@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import Img from '../../img/candidate1.png';
 import Img1 from '../../img/candidate2.jpeg';
+import Title from '../home/Title';
 
 const Testimonials = () => {
   const settings = {
@@ -32,20 +33,20 @@ const Testimonials = () => {
   ]);
 
   return (
-    <section className='testimonials mt-5'>
+    <div className='testimonials'>
       <div className='container'>
         <div className='row'>
           <div className='col-sm-12'>
-            <h2 className='mb-5 text-center'>Testimonials</h2>
+            <Title title='testimonials' />
           </div>
         </div>
 
-        <div className='card px-5 z-depth-4'>
+        <div className='card px-4'>
           <Slider {...settings}>
             {testimonies.map((item) => (
               <div key={item.id}>
                 <div className='row py-5'>
-                  <div className='col-lg-4 px-5'>
+                  <div className='col-lg-4 col-md-6 mx-auto px-5'>
                     <img
                       src={item.img}
                       alt={item.candidate}
@@ -53,7 +54,7 @@ const Testimonials = () => {
                     />
                     <p className='text-center'>{item.candidate}</p>
                   </div>
-                  <div className='col-lg-8 mt-5 pl-lg-5'>
+                  <div className='col-lg-8 mt-3 pl-lg-5'>
                     <p>{item.testimony}</p>
                   </div>
                 </div>
@@ -62,7 +63,7 @@ const Testimonials = () => {
           </Slider>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

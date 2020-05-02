@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import Logo from '../../img/logo.png';
+import { FaCode } from 'react-icons/fa';
 
 const Navbar = () => {
   return (
     <nav className='navbar navbar-expand-lg navbar-info m-auto p-4 z-depth-3'>
       <div className='container'>
         <Link className='navbar-brand text-white' to='/'>
-          Job Portal
+          <FaCode size={32} color='#ff6633' /> Dev Portal
         </Link>
         <button
           className='navbar-toggler'
@@ -26,11 +26,6 @@ const Navbar = () => {
             <li className='nav-item'>
               <Link className='nav-link' to='/'>
                 Home
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link className='nav-link' to='#'>
-                About Us
               </Link>
             </li>
             <li className='nav-item'>

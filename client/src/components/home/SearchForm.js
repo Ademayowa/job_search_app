@@ -26,7 +26,7 @@ const SearchForm = () => {
             <input
               className='form-control form-control-lg mb-3'
               type='text'
-              placeholder='Search job title'
+              placeholder='Search job title or location'
               ref={text}
               onChange={onChange}
             />
@@ -39,8 +39,6 @@ const SearchForm = () => {
               className='form-control form-control-lg mb-3'
               type='text'
               placeholder='Search location'
-              ref={text}
-              onChange={onChange}
             />
             <span>
               {' '}

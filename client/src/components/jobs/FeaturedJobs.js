@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { JobContext } from '../../context/jobs/JobState';
 import FeaturedJobList from './FeaturedJobList';
 import Spinner from '../layout/Spinner';
+import Title from '../home/Title';
 
 const FeaturedJobs = () => {
   const { jobs, loading, getJobs, filtered } = useContext(JobContext);
@@ -13,8 +14,8 @@ const FeaturedJobs = () => {
 
   if (loading) return <Spinner />;
   return (
-    <div className='container featured-jobs mb-5 text-center'>
-      <h2 className='mt-5 mb-5'>Featured Jobs</h2>
+    <div className='container featured-jobs text-center'>
+      <Title title='featured jobs' />
       <div style={grid}>
         {filtered !== null
           ? filtered.map((job) => <FeaturedJobList key={job._id} job={job} />)
