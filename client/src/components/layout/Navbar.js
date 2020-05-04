@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaCode } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 
-const Navbar = () => {
+const Navbar = ({ title }) => {
   return (
     <nav className='navbar navbar-expand-lg navbar-info m-auto p-4 z-depth-3'>
       <div className='container'>
         <Link className='navbar-brand text-white' to='/'>
-          <FaCode size={32} color='#ff6633' /> Dev Portal
+          <FaCode size={32} color='#ff6633' /> {title}
         </Link>
         <button
           className='navbar-toggler'
@@ -19,7 +20,7 @@ const Navbar = () => {
           aria-label='Toggle navigation'
         >
           <span />
-          <span className='navbar-toggler-icon fa fa-bars text-primary' />
+          <span className='navbar-toggler-icon' />
         </button>
         <div className='collapse navbar-collapse' id='navbarSupportedContent'>
           <ul className='navbar-nav ml-auto'>
@@ -29,12 +30,12 @@ const Navbar = () => {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link className='nav-link' to='#'>
+              <Link className='nav-link' to='/register'>
                 Register
               </Link>
             </li>
             <li className='nav-item'>
-              <Link className='nav-link' to='#'>
+              <Link className='nav-link' to='/login'>
                 Login
               </Link>
             </li>
@@ -43,6 +44,10 @@ const Navbar = () => {
       </div>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 export default Navbar;

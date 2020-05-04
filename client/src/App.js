@@ -7,25 +7,36 @@ import 'mdbootstrap/css/mdb.min.css';
 import Home from './components/home/Home';
 import { JobProvider } from './context/jobs/JobState';
 import SingleJob from './components/job/SingleJob';
-import { CompanyProvider } from './context/company/CompanyState';
+// import { CompanyProvider } from './context/company/CompanyState';
 import Footer from './components/layout/Footer';
+import { AuthProvider } from './context/auth/AuthState';
+import Register from './components/auth/Register';
+import Login from './components/auth/Login';
+import { AlertProvider } from './context/alert/AlertState';
+import Alerts from './components/layout/Alerts';
 
 const App = () => {
   return (
     <Fragment>
-      <JobProvider>
-        <CompanyProvider>
-          <Router>
-            <div className='App'>
-              <Switch>
-                <Route exact path='/' component={Home} />
-                <Route exact path='/jobs/:jobId' component={SingleJob} />
-              </Switch>
-            </div>
-          </Router>
-          <Footer />
-        </CompanyProvider>
-      </JobProvider>
+      <AuthProvider>
+        <JobProvider>
+          <AlertProvider>
+            <Router>
+              <div className='App'>
+                <Alerts>
+                  <Switch>
+                    <Route exact path='/' component={Home} />
+                    <Route exact path='/register' component={Register} />
+                    <Route exact path='/login' component={Login} />
+                    <Route exact path='/jobs/:jobId' component={SingleJob} />
+                  </Switch>
+                </Alerts>
+              </div>
+            </Router>
+            <Footer />
+          </AlertProvider>
+        </JobProvider>
+      </AuthProvider>
     </Fragment>
   );
 };

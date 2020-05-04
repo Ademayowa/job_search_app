@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <Fragment>
       <Hero>
-        <Navbar />
+        <Navbar title='Dev Portal' />
         <Banner
           title='find your dream job'
           subtitle='find jobs employmemt & career opportunities'
