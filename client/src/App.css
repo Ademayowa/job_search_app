@@ -173,7 +173,8 @@ a.nav-link {
   display: table;
 }
 
-.job-info .btn-outline-danger {
+.job-info .btn-outline-danger,
+.application-form .btn-outline-danger {
   color: var(--white-color) !important;
   background: var(--orange-color) !important;
   border-radius: 25px;

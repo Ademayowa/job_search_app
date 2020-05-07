@@ -2,11 +2,13 @@ import React, { useContext } from 'react';
 import { AlertContext } from '../../context/alert/AlertState';
 
 const Alerts = () => {
-  const { alerts, setAlert } = useContext(AlertContext);
+  const { alerts } = useContext(AlertContext);
 
   return (
-    alert !== null && (
-      <div className={`alert alert-${alert.type}`}>{alert.msg}</div>
+    alerts !== null && (
+      <div className={`alert alert-${alerts.type} col-md-6 mx-auto mt-3`}>
+        {alerts.msg}
+      </div>
     )
   );
 };

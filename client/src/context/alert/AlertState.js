@@ -1,6 +1,5 @@
 import React, { useReducer, createContext } from 'react';
 import AlertReducer from './AlertReducer';
-import axios from 'axios';
 
 // Initial state
 const initialState = null;
