@@ -34,13 +34,21 @@ const jobSchema = new mongoose.Schema({
     trim: true,
     required: [true, 'Please add a title'],
   },
-  jobSummary: {
+  summary: {
     type: String,
-    required: [true, 'Please add a job summary'],
+    required: [true, 'Please add job summary'],
+  },
+  description: {
+    type: String,
+    required: [true, 'Please add job description'],
+  },
+  responsibilities: {
+    type: [String],
+    required: [true, 'Please add respnsibilities'],
   },
   salary: {
     type: String,
-    required: [true, 'Please add a salary'],
+    required: [true, 'Please add salary'],
   },
   location: {
     type: String,

@@ -6,7 +6,7 @@ import Spinner from '../layout/Spinner';
 import { MdLocationOn } from 'react-icons/md';
 import {
   FaRegMoneyBillAlt,
-  FaCalendarAlt,
+  FaTools,
   FaPhone,
   FaEnvelope,
 } from 'react-icons/fa';
@@ -15,7 +15,11 @@ import { IoMdGlobe } from 'react-icons/io';
 // import { numberWithCommas } from '../../utils/format';
 
 const SingleJob = ({ match }) => {
-  const { job, loading, getJob } = useContext(JobContext);
+  let { job, loading, getJob } = useContext(JobContext);
+
+  // let jobs = job;
+
+  // jobs = job.join(',');
 
   useEffect(() => {
     getJob(match.params.jobId);
@@ -31,20 +35,23 @@ const SingleJob = ({ match }) => {
             Back
           </Link>
           <h3 className='mt-4 mb-4'>{job.title}</h3>
-          <p className='mb-5'>
+          <p className='mb-4'>
             <span className='icons'>
-              <MdLocationOn size={21} color='#ff6633' /> {job.location}{' '}
-              &nbsp;&nbsp;
-              <FaRegMoneyBillAlt /> Salary : ${job.salary}
-              &nbsp;&nbsp;
-              <FaCalendarAlt size={18} color='#ff6633' /> Expires In : 10days
+              <MdLocationOn size={20} color='#ff6633' /> {job.location}{' '}
+              <FaRegMoneyBillAlt size={20} color='#ff6633' /> Salary :{' '}
+              {job.salary}
+              <FaTools size={20} color='#ff6633' /> Role : {job.skillLevel}
             </span>
           </p>
           <hr />
 
-          <h4 className='mt-5 mb-3'>Job Description</h4>
-          <p>{job.jobSummary}</p>
-          <h4 className='mt-5 mb-3'>Required Skills</h4>
+          <h4 className='mt-5 mb-3'>Job description</h4>
+          <p>{job.description}</p>
+
+          <h4 className='mt-5 mb-3'>Responsibilities</h4>
+          <p>{job.responsibilities}</p>
+
+          <h4 className='mt-5  mb-3'>Skills and qualification</h4>
           <p>{job.skills}</p>
         </div>
 
@@ -61,7 +68,7 @@ const SingleJob = ({ match }) => {
             }}
           />
           <article className='ml-4 company-details'>
-            <h4 className='mb-3 text-capitalize'>{job.name}</h4>
+            <h4 className='mb-3 mt-4 text-capitalize'>{job.name}</h4>
             <p>
               <span>
                 <IoMdGlobe size={16} color='#ff6633' />{' '}

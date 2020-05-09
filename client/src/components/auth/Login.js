@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { AlertContext } from '../../context/alert/AlertState';
 import { AuthContext } from '../../context/auth/AuthState';
+import { Link } from 'react-router-dom';
 
 const Login = (props) => {
   const { setAlert } = useContext(AlertContext);
@@ -42,31 +43,37 @@ const Login = (props) => {
   };
 
   return (
-    <div className='container col-md-6 mx-auto mt-5 mb-5 card bg-white p-5'>
-      <h2 className='text-center mb-3'>Login</h2>
-      <form onSubmit={onSubmit}>
-        <div className='form-group'>
-          <label htmlFor='email'>Email</label>
+    <div className='container col-md-4 mx-auto mt-5 mb-5 login'>
+      <div className='card p-5 z-depth-2'>
+        <h3 className='text-center mb-3'>Login</h3>
+        <form onSubmit={onSubmit}>
+          <div className='form-group'>
+            <label htmlFor='email'>Email</label>
+            <input
+              className='form-control form-control-lg mb-3'
+              type='email'
+              name='email'
+              value={email}
+              onChange={onChange}
+            />
+          </div>
+          <div className='form-group'>
+            <label htmlFor='password'>Password</label>
+            <input
+              className='form-control form-control-lg mb-3'
+              type='password'
+              name='password'
+              value={password}
+              onChange={onChange}
+            />
+          </div>
           <input
-            className='form-control form-control-lg mb-3'
-            type='email'
-            name='email'
-            value={email}
-            onChange={onChange}
+            type='submit'
+            value='Login'
+            className='btn btn-outline-danger btn-lg btn-block mt-4'
           />
-        </div>
-        <div className='form-group'>
-          <label htmlFor='password'>Password</label>
-          <input
-            className='form-control form-control-lg mb-3'
-            type='password'
-            name='password'
-            value={password}
-            onChange={onChange}
-          />
-        </div>
-        <input type='submit' value='Login' className='btn btn-primary' />
-      </form>
+        </form>
+      </div>
     </div>
   );
 };

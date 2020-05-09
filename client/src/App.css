@@ -64,12 +64,8 @@ a.nav-link {
 
 /* Hero */
 .defaultHero {
-  background: linear-gradient(
-      to left bottom,
-      rgb(94, 119, 141),
-      rgba(15, 52, 81, 0.95)
-    ),
-    url('./img/hero.png') center/cover;
+  background: rgba(15, 52, 81, 0.95);
+
   padding-bottom: 100px;
 }
 
@@ -179,6 +175,21 @@ a.nav-link {
   background: var(--orange-color) !important;
   border-radius: 25px;
   border: 0 !important;
+}
+
+.login .btn-outline-danger,
+.register .btn-outline-danger {
+  color: var(--white-color) !important;
+  background: var(--orange-color) !important;
+  /* border-radius: 25px; */
+  height: 54px;
+  border: 0 !important;
+}
+
+.register .card:hover,
+.login .card:hover {
+  transform: none !important;
+  background-color: none !important;
 }
 
 .job-info .btn-outline-danger:hover {
