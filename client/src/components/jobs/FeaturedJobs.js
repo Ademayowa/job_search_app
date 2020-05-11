@@ -7,7 +7,7 @@ import Title from '../home/Title';
 const FeaturedJobs = () => {
   const { jobs, loading, getJobs, filtered } = useContext(JobContext);
 
-  console.log(jobs);
+  // console.log(jobs);
 
   useEffect(() => {
     getJobs();

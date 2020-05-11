@@ -8,6 +8,7 @@
   --blue-color: #f1f6fc;
   --form-height: 54px;
   --letter-spacing: 0.5px;
+  --line-height: 2;
   --letter-spacing-banner: 1.5px;
   --section-padding: 70px 15px 0px 15px;
 }
@@ -16,7 +17,8 @@ body {
   font-family: 'Nunito', sans-serif !important;
 }
 
-p {
+p,
+ul {
   font-size: 17px;
 }
 
@@ -24,13 +26,14 @@ h2,
 h4,
 h5,
 p,
-span {
+span,
+ul {
   letter-spacing: var(--letter-spacing);
 }
 
-ul {
+/* ul {
   list-style: none;
-}
+} */
 
 h2 {
   font-size: 40px !important;
@@ -160,18 +163,23 @@ a.nav-link {
   border-bottom: 1px solid #e8ecec;
 }
 
-.job-info p {
+.job-info ul {
+  padding-left: 15px;
+}
+
+.job-info p,
+.job-info ul {
   color: var(--gray-color);
+  line-height: var(--line-height);
 }
 
 .job-info .icons {
-  line-height: 2;
+  line-height: var(--line-height);
   display: table;
 }
 
-.job-info .btn-outline-danger,
-.application-form .btn-outline-danger {
-  color: var(--white-color) !important;
+.job-info .btn-danger,
+.application-form .btn-danger {
   background: var(--orange-color) !important;
   border-radius: 25px;
   border: 0 !important;
@@ -192,13 +200,13 @@ a.nav-link {
   background-color: none !important;
 }
 
-.job-info .btn-outline-danger:hover {
+/* .job-info .btn-outline-danger:hover {
   background: var(--hover-color) !important;
   border: 0 !important;
   color: var(--white-color) !important;
-}
+} */
 
-.company-details .btn-outline-danger {
+.company-details .btn-danger {
   width: 250px !important;
   font-size: 13px !important;
   border-radius: 40px !important;

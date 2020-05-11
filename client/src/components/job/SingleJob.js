@@ -12,14 +12,8 @@ import {
 } from 'react-icons/fa';
 import { IoMdGlobe } from 'react-icons/io';
 
-// import { numberWithCommas } from '../../utils/format';
-
 const SingleJob = ({ match }) => {
   let { job, loading, getJob } = useContext(JobContext);
-
-  // let jobs = job;
-
-  // jobs = job.join(',');
 
   useEffect(() => {
     getJob(match.params.jobId);
@@ -31,7 +25,7 @@ const SingleJob = ({ match }) => {
     <div className='container job-info mb-5'>
       <div className='row'>
         <div className='col-lg-8 margin p-4'>
-          <Link to='/' className='btn btn-outline-danger text-capitalize'>
+          <Link to='/' className='btn btn-danger text-capitalize'>
             Back
           </Link>
           <h3 className='mt-4 mb-4'>{job.title}</h3>
@@ -49,10 +43,25 @@ const SingleJob = ({ match }) => {
           <p>{job.description}</p>
 
           <h4 className='mt-5 mb-3'>Responsibilities</h4>
-          <p>{job.responsibilities}</p>
+          <ul>
+            {job.responsibilities.role.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
 
-          <h4 className='mt-5  mb-3'>Skills and qualification</h4>
-          <p>{job.skills}</p>
+          <h4 className='mt-5 mb-3'>Skills</h4>
+          <ul>
+            {job.skills.skill.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+
+          <h4 className='mt-5 mb-3'>About Company</h4>
+          <ul>
+            {job.company.about.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
         </div>
 
         <div className='col-lg-4 mt-5 p-4'>
@@ -90,7 +99,7 @@ const SingleJob = ({ match }) => {
 
             <Link
               to={`/jobs/apply/${job._id}`}
-              className='btn btn-outline-danger btn-lg text-capitalize'
+              className='btn btn-danger btn-lg text-capitalize'
             >
               Apply
             </Link>

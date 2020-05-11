@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
 const jobSchema = new mongoose.Schema({
-  company: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Company',
-  },
   name: {
     type: String,
     trim: true,
@@ -43,8 +39,10 @@ const jobSchema = new mongoose.Schema({
     required: [true, 'Please add job description'],
   },
   responsibilities: {
-    type: [String],
-    required: [true, 'Please add respnsibilities'],
+    role: {
+      type: [String],
+      required: [true, 'Please add respnsibilities'],
+    },
   },
   salary: {
     type: String,
@@ -60,8 +58,15 @@ const jobSchema = new mongoose.Schema({
     enum: ['intern', 'junior', 'intermediate', 'senior'],
   },
   skills: {
-    type: [String],
-    required: [true, 'Please add skills'],
+    skill: {
+      type: [String],
+      required: [true, 'Please add skills'],
+    },
+  },
+  company: {
+    about: {
+      type: [String],
+    },
   },
   type: {
     type: String,

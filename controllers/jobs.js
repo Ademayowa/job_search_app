@@ -15,22 +15,14 @@ const ErrorResponse = require('../utils/errorResponse');
  * // asyncMiddleware allows you avoid using try & catch while newErrorResponse allows you to pass the error(in a try catch block) to the next obj
  */
 exports.getJobs = asyncMiddleware(async (req, res, next) => {
-  // console.log(req.query);
+  // using projection from MongoDB
+  const jobs = await Job.find({}, { title: 1, skillLevel: 1, location: 1 });
 
-  let query;
-
-  queryStrUrl = JSON.stringify(req.query);
-  queryStrUrl = queryStrUrl.replace(
-    /\b(gt|gte|lt|lte|in)\b/g,
-    (match) => `$${match}`
-  );
-
-  query = Job.find(JSON.parse(queryStrUrl));
-
-  // query here is the same as Job.find()
-  const jobs = await query;
-
-  res.status(200).json({ success: true, count: jobs.length, data: jobs });
+  res.status(200).json({
+    success: true,
+    count: jobs.length,
+    data: jobs,
+  });
 });
 
 /**

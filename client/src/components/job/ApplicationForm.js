@@ -14,10 +14,7 @@ const ApplicationForm = ({ match }) => {
   if (loading) return <Spinner />;
   return (
     <div className='container mt-3 mb-5 application-form px-5'>
-      <Link
-        to={`/jobs/${job._id}`}
-        className='btn btn-outline-danger text-capitalize'
-      >
+      <Link to={`/jobs/${job._id}`} className='btn btn-danger text-capitalize'>
         Back
       </Link>
       <h4 className='text-center mt-2 mb-4'>Job Application Form</h4>

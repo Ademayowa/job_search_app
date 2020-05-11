@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { AlertContext } from '../../context/alert/AlertState';
 import { AuthContext } from '../../context/auth/AuthState';
-import { Link } from 'react-router-dom';
 
 const Login = (props) => {
   const { setAlert } = useContext(AlertContext);
